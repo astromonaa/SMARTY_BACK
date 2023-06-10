@@ -4,7 +4,12 @@ import { unlink } from 'fs/promises'
 export async function removeFile(path) {
   try {
     await unlink(path)
-  }catch(e) {
+  }catch(err) {
     console.log('Error while removing file ', err.message);
   }
 }
+
+export const botCommands = [
+  {command: '/start', description: 'Bot start'},
+  {command: '/info', description: 'Get bot info'}
+]

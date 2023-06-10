@@ -11,5 +11,5 @@ export async function removeFile(path) {
 
 export const botCommands = [
   {command: '/start', description: 'Bot start'},
-  {command: '/info', description: 'Get bot info'}
+  {command: '/voices', description: 'enable web app button'}
 ]

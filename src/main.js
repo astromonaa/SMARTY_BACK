@@ -44,6 +44,17 @@ bot.command('start', async ctx => {
   // ]))
 })
 
+bot.command('voices', async ctx => {
+  await ctx.telegram.setChatMenuButton({
+    chatId: ctx.message.chat.id,
+    menuButton: {
+      type: 'web_app',
+      text: 'choose voice', 
+      web_app: {url: 'https://smarty-gpt.netlify.app/'}
+    }
+  })
+})
+
 bot.on(message('voice'), async ctx => {
   ctx.session ??= INITIAL_SESSION
   try {

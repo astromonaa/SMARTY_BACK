@@ -5,10 +5,10 @@ import wav from'node-wav';
 import Lame from 'node-lame'
 
 class TextConverter {
-  async textToSpeech(text) {
+  async textToSpeech(text, voice_id) {
     try {
       const res = await $textToSpeechHost.post("/tts", {
-        voice_id: 1,
+        voice_id,
         text,
         format: "mp3",
       });

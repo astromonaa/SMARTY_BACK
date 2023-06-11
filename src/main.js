@@ -105,6 +105,10 @@ bot.on(message('text'), async ctx => {
   }
 })
 
+bot.on('web_app_data', ctx => {
+  console.log(ctx);
+})
+
 
 bot.launch()
 

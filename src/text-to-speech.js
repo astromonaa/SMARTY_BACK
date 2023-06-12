@@ -3,9 +3,11 @@ import { $textToSpeechHost } from "./api/api.js";
 import fs from "fs";
 import wav from'node-wav';
 import Lame from 'node-lame'
+import { textWithAccents } from "./utils.js";
 
 class TextConverter {
   async textToSpeech(text, voice_id) {
+    text = textWithAccents(text)
     try {
       const res = await $textToSpeechHost.post("/tts", {
         voice_id,

@@ -9,6 +9,12 @@ export async function removeFile(path) {
   }
 }
 
+export function textWithAccents(text) {
+  return text.toLowerCase()
+    .replaceAll('помочь', 'пом+очь')
+    .replaceAll('готов', 'гот+ов')
+}
+
 export const botCommands = [
   {command: '/start', description: 'Bot start'},
   {command: '/voices', description: 'enable web app button'}
